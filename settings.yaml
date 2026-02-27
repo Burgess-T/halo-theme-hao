@@ -30,6 +30,11 @@ spec:
           label: 公安备案
           placeholder: 请输入公安备案号
           help: 格式：皖公网安备 xxxxxxxx 号
+        - $formkit: text
+          name: moeicp
+          label: 萌国ICP
+          placeholder: 请输入萌国ICP号
+          help: 格式：萌ICP备xxxxxxxx号
         - $formkit: url
           name: copyrightAgreement
           label: 版权协议
@@ -1363,6 +1368,7 @@ spec:
               about: true
               icp_icon: true
               gongwangan: true
+              moeicp: true
               yingsi: true
               yunzhichi: false
               footer_banner_padding: 1
@@ -1425,6 +1431,12 @@ spec:
                   id: gongwangan
                   key: gongwangan
                   label: 公网安备案
+                - $formkit: switch
+                  if: $get(default_enable).value
+                  name: moeicp
+                  id: moeicp
+                  key: moeicp
+                  label: 萌国ICP备案
                 - $formkit: switch
                   if: $get(default_enable).value
                   name: yingsi
