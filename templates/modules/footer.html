@@ -135,7 +135,7 @@
                    target="_blank">
                     <span>本网站由</span>&nbsp;&nbsp;
                     <img th:src="${assets_link + '/images/footer/aliyun.png'}" alt="aliyun_cloud" class="cloud-logo" />
-                    &nbsp;&nbsp;<span>提供CDN加速/云存储服务</span>
+                    &nbsp;&nbsp;<span>提供CDN加速及云计算服务</span>
                 </a>
                 <!-- 腾讯云 -->
                 <a th:if="${theme.config.footer.footerContent.default_enable_group.yunzhichi && theme.config.footer.footerContent.default_enable_group.yunzhichi_list == 'tencent_cloud'}"
@@ -175,25 +175,24 @@
                    target="_blank">
                     <span th:if="${not #strings.startsWith(theme.config.basics.icp, 'http')}">[[${theme.config.basics
                         .icp}]]</span>
-                    <img th:if="${#strings.startsWith(theme.config.basics.icp, 'http')}"
-                         th:src="@{${theme.config.basics.icp}}" alt="icp"/>
+                    <!-- <img th:if="${#strings.startsWith(theme.config.basics.icp, 'http')}"
+                         th:src="@{${theme.config.basics.icp}}" alt="icp"/> -->
                 </a>
                 <a th:if="${not #strings.isEmpty(theme.config.basics.gongan) && theme.config.footer.footerContent.default_enable_group.gongwangan}"
                    class="footer-banner-link" href="http://www.beian.gov.cn/portal/registerSystemInfo"
                    rel="noopener external nofollow noreferrer noopener"
                    target="_blank">
                     <span th:if="${not #strings.startsWith(theme.config.basics.gongan, 'http')}">[[${theme.config.basics.gongan}]]</span>
-                    <img th:if="${#strings.startsWith(theme.config.basics.gongan, 'http')}"
-                         th:src="@{${theme.config.basics.gongan}}" alt="gongan"/>
+                    <!-- <img th:if="${#strings.startsWith(theme.config.basics.gongan, 'http')}"
+                         th:src="@{${theme.config.basics.gongan}}" alt="gongan"/> -->
                 </a>
-                <th:block th:if="${not #strings.isEmpty(theme.config.basics.moeicp) && theme.config.footer.footerContent.default_enable_group.moeicp}">
-                    <a th:with="moeicpKeyword=${theme.config.basics.moeicp.replaceAll('[^0-9]', '')}"
-                        class="footer-banner-link" th:href="|https://icp.gov.moe/?keyword=${moeicpKeyword}|"
-                        rel="noopener external nofollow noreferrer noopener"
-                        target="_blank">
-                        <span th:if="${not #strings.startsWith(theme.config.basics.moeicp, 'http')}">[[${theme.config.basics.moeicp}]]</span>
-                    </a>
-                </th:block>
+                <a th:if="${not #strings.isEmpty(theme.config.basics.moeicp) && theme.config.footer.footerContent.default_enable_group.moeicp}"
+                   th:with="moeicpKeyword=${theme.config.basics.moeicp.replaceAll('[^0-9]', '')}"
+                   class="footer-banner-link" th:href="|https://icp.gov.moe/?keyword=${moeicpKeyword}|"
+                   rel="noopener external nofollow noreferrer noopener"
+                   target="_blank">
+                    <span th:if="${not #strings.startsWith(theme.config.basics.moeicp, 'http')}">[[${theme.config.basics.moeicp}]]</span>
+                </a>
                 <a class="footer-banner-link cc" th:href="${theme.config.basics.copyrightAgreement}"
                    th:if="${not #strings.isEmpty(theme.config.basics.copyrightAgreement) && theme.config.footer.footerContent.default_enable_group.yingsi}" title="cc协议">
                     <i class="haofont hao-icon-copyright-line"></i>
